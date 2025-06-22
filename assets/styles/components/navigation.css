@@ -1,0 +1,213 @@
+/* Navigation Brand Section */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-brand h3 {
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0;
+}
+
+.nav-brand h3 b {
+    color: var(--color-accent-green);
+}
+
+/* Desktop Navigation Menu */
+.nav-menu {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-link {
+    position: relative;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    transition: color var(--transition-fast);
+    padding: 5px 0;
+}
+
+.nav-link:hover {
+    color: var(--color-text-primary);
+}
+
+/* Active Link Styles */
+.nav-link.active {
+    color: var(--color-text-primary);
+}
+
+/* Sword Underline Effect */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--color-accent-blue) 20%, 
+        var(--color-accent-blue) 80%, 
+        transparent 100%);
+    transition: transform var(--transition-fast);
+    transform-origin: center;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Glow Effect on Active */
+.nav-link.active::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background: var(--color-accent-blue);
+    filter: blur(8px);
+    opacity: 0.6;
+}
+
+/* Mobile Navigation Toggle */
+.nav-mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.nav-mobile-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--color-text-primary);
+    transition: all var(--transition-fast);
+    transform-origin: center;
+}
+
+.nav-mobile-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.nav-mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.nav-mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(26, 32, 44, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    transition: right var(--transition-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+}
+
+.mobile-nav-link {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 400;
+    transition: all var(--transition-fast);
+    position: relative;
+    padding: 10px 0;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+    color: var(--color-text-primary);
+    transform: translateX(10px);
+}
+
+.mobile-nav-link::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%) scaleX(0);
+    width: 20px;
+    height: 2px;
+    background: var(--color-accent-blue);
+    transition: transform var(--transition-fast);
+}
+
+.mobile-nav-link:hover::before,
+.mobile-nav-link.active::before {
+    transform: translateY(-50%) scaleX(1);
+}
+
+/* Navigation Animation on Load */
+@keyframes navSlideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#nav {
+    animation: navSlideDown 0.8s ease-out;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .nav-mobile-toggle {
+        display: flex;
+    }
+    
+    .nav-brand h3 {
+        font-size: 20px;
+    }
+    
+    #nav {
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-menu {
+        display: none !important;
+    }
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sword Nest - Yapay zeka ve insan yaratıcılığının birleştiği nokta. Yenilikçi reklam ajansımız hakkında bilgi edinin.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://swordnest.com/hakkimizda.html">
+    <meta property="og:title" content="Hakkımızda - Sword Nest">
+    <meta property="og:description" content="Sword Nest - Yapay zeka ve insan yaratıcılığının birleştiği nokta. Yenilikçi reklam ajansımız hakkında bilgi edinin.">
+    <meta property="og:image" content="https://swordnest.com/paylasim-fotografi.jpg">
+    <meta property="og:site_name" content="Sword Nest">
+    
+    <title>Hakkımızda - Sword Nest</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/styles/components/navigation.css">
+    <link rel="stylesheet" href="assets/styles/pages/hakkimizda.css">
+</head>
+
+<body>
+    <!-- Page Transition Overlay -->
+    <div id="page-transition" class="page-transition">
+        <div class="sword-slash"></div>
+    </div>
+
+    <!-- Enhanced Navigation -->
+    <div id="nav">
+        <div class="nav-brand">
+            <h3><b>SWORD</b></h3>
+            <canvas id="nav-canvas"></canvas>
+            <h3>NEST</h3>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link" data-page="home">Ana Sayfa</a>
+            <a href="hakkimizda.html" class="nav-link active" data-page="about">Hakkımızda</a>
+            <a href="projeler.html" class="nav-link" data-page="projects">Projeler</a>
+            <a href="iletisim.html" class="nav-link" data-page="contact">İletişim</a>
+        </nav>
+        <div class="nav-mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-nav-link" data-page="home">Ana Sayfa</a>
+            <a href="hakkimizda.html" class="mobile-nav-link active" data-page="about">Hakkımızda</a>
+            <a href="projeler.html" class="mobile-nav-link" data-page="projects">Projeler</a>
+            <a href="iletisim.html" class="mobile-nav-link" data-page="contact">İletişim</a>
+        </div>
+    </div>
+
+    <div id="main">
+        <!-- Hero Section -->
+        <section id="about-hero" class="about-section">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="sword-icon">⚔️</span>
+                    KILICIN USTASI
+                </h1>
+                <p class="hero-subtitle">
+                    Yapay zeka ve insan yaratıcılığının kesişim noktasında,<br>
+                    markaların geleceğini şekillendiriyoruz
+                </p>
+            </div>
+            <div class="hero-particles"></div>
+            <div class="hero-video-bg">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/videos/about-hero-bg.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="about-mission" class="about-section">
+            <div class="container">
+                <div class="mission-grid">
+                    <div class="mission-content">
+                        <h2>MİSYONUMUZ</h2>
+                        <p class="lead">
+                            Sword Nest, geleneksel reklam ajansı modelini yeniden tanımlıyor. 
+                            Yapay zeka teknolojilerini yaratıcı süreçlerimizin kalbine yerleştirerek, 
+                            müşterilerimize ölçülebilir sonuçlar ve unutulmaz deneyimler sunuyoruz.
+                        </p>
+                        <p>
+                            Her proje, veriye dayalı içgörüler ve sınırsız yaratıcılığın 
+                            mükemmel birleşimi ile şekilleniyor. Amacımız sadece reklam 
+                            yapmak değil, markaları dijital çağın liderleri haline getirmek.
+                        </p>
+                    </div>
+                    <div class="mission-visual">
+                        <canvas id="mission-sword"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="about-team" class="about-section">
+            <div class="container">
+                <h2 class="section-title">ZIRH KUŞANMIŞ EKİP</h2>
+                <div class="team-grid">
+                    <!-- Team Member 1 -->
+                    <div class="team-member" data-member="1">
+                        <div class="member-portrait">
+                            <div class="ai-portrait"></div>
+                            <img src="assets/images/team/member1.jpg" alt="Kılıç Ustası" class="real-portrait">
+                        </div>
+                        <h3>Ahmet Kılıç</h3>
+                        <p class="member-title">Kılıç Ustası (CEO)</p>
+                        <p class="member-bio">15 yıllık deneyimi ile dijital dönüşümün öncüsü</p>
+                    </div>
+                    
+                    <!-- Team Member 2 -->
+                    <div class="team-member" data-member="2">
+                        <div class="member-portrait">
+                            <div class="ai-portrait"></div>
+                            <img src="assets/images/team/member2.jpg" alt="Bıçak Mimarı" class="real-portrait">
+                        </div>
+                        <h3>Elif Keskin</h3>
+                        <p class="member-title">Bıçak Mimarı (Creative Director)</p>
+                        <p class="member-bio">Ödüllü yaratıcı vizyonu ile markaları şekillendiriyor</p>
+                    </div>
+                    
+                    <!-- Team Member 3 -->
+                    <div class="team-member" data-member="3">
+                        <div class="member-portrait">
+                            <div class="ai-portrait"></div>
+                            <img src="assets/images/team/member3.jpg" alt="Veri Demircisi" class="real-portrait">
+                        </div>
+                        <h3>Mert Çelik</h3>
+                        <p class="member-title">Veri Demircisi (Data Analyst)</p>
+                        <p class="member-bio">Yapay zeka ve veri bilimi uzmanı</p>
+                    </div>
+                    
+                    <!-- Team Member 4 -->
+                    <div class="team-member" data-member="4">
+                        <div class="member-portrait">
+                            <div class="ai-portrait"></div>
+                            <img src="assets/images/team/member4.jpg" alt="Kenar Taktiği Uzmanı" class="real-portrait">
+                        </div>
+                        <h3>Zeynep Stratej</h3>
+                        <p class="member-title">Kenar Taktiği Uzmanı (Strategist)</p>
+                        <p class="member-bio">Marka stratejileri ve pazar analizi konusunda uzman</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="about-process" class="about-section">
+            <div class="container">
+                <h2 class="section-title">KESKİNLEŞTİRİLMİŞ KENAR PROTOKOLÜ™</h2>
+                <div class="process-timeline">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="process-step" data-step="1">
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>KEŞİF</h3>
+                            <p>AI destekli pazar analizi ve rakip araştırması ile fırsatları belirliyoruz</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step" data-step="2">
+                        <div class="step-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>STRATEJİ</h3>
+                            <p>Veriye dayalı içgörüler ile keskin stratejiler geliştiriyoruz</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step" data-step="3">
+                        <div class="step-icon">
+                            <i class="fas fa-hammer"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>DÖVME</h3>
+                            <p>Yaratıcı fikirler ve AI araçları ile içerikler üretiyoruz</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step" data-step="4">
+                        <div class="step-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>SALDIRI</h3>
+                            <p>Çok kanallı kampanyalar ile hedef kitleye ulaşıyoruz</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step" data-step="5">
+                        <div class="step-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="step-content">
+                            <h3>BİLEME</h3>
+                            <p>Sürekli optimizasyon ile sonuçları keskinleştiriyoruz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section id="about-values" class="about-section">
+            <div class="container">
+                <h2 class="section-title">KILICIN ÜÇ ERDEMİ</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <span class="icon-glow"></span>
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <h3>HASSASİYET</h3>
+                        <p>Her kampanya, hedef kitleye milimetrik doğrulukta ulaşır</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <span class="icon-glow"></span>
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>YENİLİK</h3>
+                        <p>Teknolojinin en keskin ucunda, sürekli evrim halindeyiz</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <span class="icon-glow"></span>
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h3>ETKİ</h3>
+                        <p>Ölçülebilir sonuçlar ve kalıcı marka değeri yaratıyoruz</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="about-cta" class="about-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>KILICINI KESKİNLEŞTİRMEYE HAZIR MISIN?</h2>
+                    <p>Markanızı dijital arenanın lideri yapalım</p>
+                    <a href="iletisim.html" class="cta-button">
+                        <span>STRATEJİ TALEP ET</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div id="footer">
+            <div id="footer-content">
+                <div id="footer-socials">
+                    <a href="https://www.instagram.com/swordnest/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/905161622146" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+                <div id="footer-text">
+                    <p>© 2025 Sword Nest. Tüm Hakları Saklıdır.</p>
+                    <p>Sitede yer alan tüm görseller ve video prodüksiyonları Sword Nest'e aittir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="assets/scripts/navigation.js"></script>
+    <script src="assets/scripts/page-loader.js"></script>
+    <script src="assets/scripts/sword-animation.js"></script>
+    <script src="assets/scripts/about.js"></script>
+</body>
+</html>

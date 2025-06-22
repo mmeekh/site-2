@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sword Nest İletişim - Markanızı dijital arenanın lideri yapmak için bizimle iletişime geçin.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://swordnest.com/iletisim.html">
+    <meta property="og:title" content="İletişim - Sword Nest">
+    <meta property="og:description" content="Sword Nest İletişim - Markanızı dijital arenanın lideri yapmak için bizimle iletişime geçin.">
+    <meta property="og:image" content="https://swordnest.com/paylasim-fotografi.jpg">
+    <meta property="og:site_name" content="Sword Nest">
+    
+    <title>İletişim - Sword Nest</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/styles/components/navigation.css">
+    <link rel="stylesheet" href="assets/styles/pages/iletisim.css">
+</head>
+
+<body>
+    <!-- Page Transition Overlay -->
+    <div id="page-transition" class="page-transition">
+        <div class="sword-slash"></div>
+    </div>
+
+    <!-- Enhanced Navigation -->
+    <div id="nav">
+        <div class="nav-brand">
+            <h3><b>SWORD</b></h3>
+            <canvas id="nav-canvas"></canvas>
+            <h3>NEST</h3>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link" data-page="home">Ana Sayfa</a>
+            <a href="hakkimizda.html" class="nav-link" data-page="about">Hakkımızda</a>
+            <a href="projeler.html" class="nav-link" data-page="projects">Projeler</a>
+            <a href="iletisim.html" class="nav-link active" data-page="contact">İletişim</a>
+        </nav>
+        <div class="nav-mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-nav-link" data-page="home">Ana Sayfa</a>
+            <a href="hakkimizda.html" class="mobile-nav-link" data-page="about">Hakkımızda</a>
+            <a href="projeler.html" class="mobile-nav-link" data-page="projects">Projeler</a>
+            <a href="iletisim.html" class="mobile-nav-link active" data-page="contact">İletişim</a>
+        </div>
+    </div>
+
+    <div id="main">
+        <!-- Hero Section with Interactive Sword -->
+        <section id="contact-hero">
+            <div class="hero-content">
+                <h1>KILICINIZI KESKİNLEŞTİRİN</h1>
+                <p>Markanızın dijital dönüşümüne başlayın</p>
+            </div>
+            <canvas id="contact-sword"></canvas>
+            <div class="hero-particles"></div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact-form-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Form Column -->
+                    <div class="form-column">
+                        <div class="form-header">
+                            <h2>STRATEJİ TALEBİ</h2>
+                            <p>Projeniz hakkında bize bilgi verin, size özel bir strateji hazırlayalım</p>
+                        </div>
+                        
+                        <form id="contact-form" class="strategy-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Adınız Soyadınız</label>
+                                    <input type="text" id="name" name="name" required>
+                                    <span class="form-line"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="company">Şirket Adı</label>
+                                    <input type="text" id="company" name="company">
+                                    <span class="form-line"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">E-posta Adresi</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <span class="form-line"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Telefon</label>
+                                    <input type="tel" id="phone" name="phone">
+                                    <span class="form-line"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service">Hizmet Türü</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Seçiniz</option>
+                                    <option value="ai-campaign">AI Destekli Kampanya</option>
+                                    <option value="video-production">Video Prodüksiyon</option>
+                                    <option value="brand-strategy">Marka Stratejisi</option>
+                                    <option value="full-service">360° Hizmet</option>
+                                </select>
+                                <span class="form-line"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="budget">Tahmini Bütçe</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Seçiniz</option>
+                                    <option value="25-50k">25.000₺ - 50.000₺</option>
+                                    <option value="50-100k">50.000₺ - 100.000₺</option>
+                                    <option value="100-250k">100.000₺ - 250.000₺</option>
+                                    <option value="250k+">250.000₺ +</option>
+                                </select>
+                                <span class="form-line"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Proje Detayları</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <span class="form-line"></span>
+                            </div>
+                            
+                            <button type="submit" class="submit-button">
+                                <span class="btn-text">STRATEJİYİ BAŞLAT</span>
+                                <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                                <span class="btn-loading"><i class="fas fa-spinner fa-spin"></i></span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Info Column -->
+                    <div class="info-column">
+                        <div class="info-card">
+                            <h3>KARARGAH</h3>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <p>Levent, Büyükdere Cad. No:123</p>
+                                    <p>34394 İstanbul, Türkiye</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <p>+90 (516) 162 21 46</p>
+                                    <p>Pazartesi - Cuma: 09:00 - 18:00</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <p>merhaba@swordnest.com</p>
+                                    <p>proje@swordnest.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>HIZLI İLETİŞİM</h3>
+                            <div class="quick-contact">
+                                <a href="https://wa.me/905161622146" class="quick-contact-btn whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp'tan Yaz</span>
+                                </a>
+                                <a href="https://www.instagram.com/swordnest/" class="quick-contact-btn instagram">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram DM</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="response-time">
+                            <div class="response-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="response-info">
+                                <h4>Ortalama Yanıt Süresi</h4>
+                                <p class="response-time-value">2 Saat</p>
+                                <p class="response-note">İş saatleri içinde</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section id="contact-map">
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="map-overlay">
+                    <div class="map-info">
+                        <h3>SWORD NEST HQ</h3>
+                        <p>Dijital dönüşümün kalbi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="contact-faq">
+            <div class="container">
+                <h2 class="section-title">SIK SORULAN SORULAR</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Minimum proje bütçesi nedir?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Projelerimiz genellikle 25.000₺'den başlar. Ancak her proje özeldir ve size özel bir teklif hazırlarız.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Proje süreci nasıl işler?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Keskinleştirilmiş Kenar Protokolü™ ile 5 aşamada ilerleriz: Keşif, Strateji, Dövme, Saldırı ve Bileme. Her aşamada size düzenli raporlama yaparız.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Hangi sektörlerde çalışıyorsunuz?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Teknoloji, fintech, sağlık, e-ticaret, moda ve gaming başta olmak üzere dijital dönüşüme açık tüm sektörlerde çalışıyoruz.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Sonuçları nasıl ölçüyorsunuz?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Her proje için özel KPI'lar belirleriz. ROI, CAC, LTV, dönüşüm oranları ve marka bilinirliği gibi metriklerle başarıyı ölçer ve raporlarız.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div id="footer">
+            <div id="footer-content">
+                <div id="footer-socials">
+                    <a href="https://www.instagram.com/swordnest/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/905161622146" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+                <div id="footer-text">
+                    <p>© 2025 Sword Nest. Tüm Hakları Saklıdır.</p>
+                    <p>Sitede yer alan tüm görseller ve video prodüksiyonları Sword Nest'e aittir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content success-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Mesajınız Alındı!</h2>
+            <p>En kısa sürede sizinle iletişime geçeceğiz.</p>
+            <button class="modal-close-btn">Tamam</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="assets/scripts/navigation.js"></script>
+    <script src="assets/scripts/page-loader.js"></script>
+    <script src="assets/scripts/sword-animation.js"></script>
+    <script src="assets/scripts/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sword Nest Projeler - Yapay zeka destekli reklam kampanyalarımız ve başarı hikayelerimizi keşfedin.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://swordnest.com/projeler.html">
+    <meta property="og:title" content="Projeler - Sword Nest">
+    <meta property="og:description" content="Sword Nest Projeler - Yapay zeka destekli reklam kampanyalarımız ve başarı hikayelerimizi keşfedin.">
+    <meta property="og:image" content="https://swordnest.com/paylasim-fotografi.jpg">
+    <meta property="og:site_name" content="Sword Nest">
+    
+    <title>Projeler - Sword Nest</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/styles/components/navigation.css">
+    <link rel="stylesheet" href="assets/styles/pages/projeler.css">
+</head>
+
+<body>
+    <!-- Page Transition Overlay -->
+    <div id="page-transition" class="page-transition">
+        <div class="sword-slash"></div>
+    </div>
+
+    <!-- Enhanced Navigation -->
+    <div id="nav">
+        <div class="nav-brand">
+            <h3><b>SWORD</b></h3>
+            <canvas id="nav-canvas"></canvas>
+            <h3>NEST</h3>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link" data-page="home">Ana Sayfa</a>
+            <a href="hakkimizda.html" class="nav-link" data-page="about">Hakkımızda</a>
+            <a href="projeler.html" class="nav-link active" data-page="projects">Projeler</a>
+            <a href="iletisim.html" class="nav-link" data-page="contact">İletişim</a>
+        </nav>
+        <div class="nav-mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-nav-link" data-page="home">Ana Sayfa</a>
+            <a href="hakkimizda.html" class="mobile-nav-link" data-page="about">Hakkımızda</a>
+            <a href="projeler.html" class="mobile-nav-link active" data-page="projects">Projeler</a>
+            <a href="iletisim.html" class="mobile-nav-link" data-page="contact">İletişim</a>
+        </div>
+    </div>
+
+    <div id="main">
+        <!-- Hero Section -->
+        <section id="projects-hero">
+            <div class="hero-content">
+                <h1>ZAFER KOLEKSİYONU</h1>
+                <p>Yapay zeka ve yaratıcılığın buluştuğu başarı hikayeleri</p>
+            </div>
+            <div class="sword-decoration"></div>
+        </section>
+
+        <!-- Filter Section -->
+        <section id="projects-filter">
+            <div class="container">
+                <div class="filter-header">
+                    <h2>KILIÇ SEÇİMİ</h2>
+                    <p>Projeleri kategoriye göre filtreleyin</p>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        <span class="btn-icon">⚔️</span>
+                        Tümü
+                    </button>
+                    <button class="filter-btn" data-filter="video">
+                        <span class="btn-icon">🎬</span>
+                        Video Prodüksiyon
+                    </button>
+                    <button class="filter-btn" data-filter="ai-campaign">
+                        <span class="btn-icon">🤖</span>
+                        AI Kampanyalar
+                    </button>
+                    <button class="filter-btn" data-filter="brand-strategy">
+                        <span class="btn-icon">🎯</span>
+                        Marka Stratejisi
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section id="projects-grid">
+            <div class="container">
+                <div class="projects-masonry">
+                    
+                    <!-- Project 1 -->
+                    <div class="project-card" data-category="ai-campaign" data-project="1">
+                        <div class="project-thumbnail">
+                            <video autoplay muted loop playsinline>
+                                <source src="assets/videos/project1-preview.mp4" type="video/mp4">
+                            </video>
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h3>TechStart Lansmanı</h3>
+                                    <p>AI Destekli Kampanya</p>
+                                    <div class="project-metrics">
+                                        <span class="metric">+3214% Dönüşüm</span>
+                                        <span class="metric">-69% CAC</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-client">TechStart</span>
+                            <span class="project-category">Teknoloji</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card" data-category="video" data-project="2">
+                        <div class="project-thumbnail">
+                            <video autoplay muted loop playsinline>
+                                <source src="assets/videos/project2-preview.mp4" type="video/mp4">
+                            </video>
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h3>EcoLife Marka Filmi</h3>
+                                    <p>Sinematik Prodüksiyon</p>
+                                    <div class="project-metrics">
+                                        <span class="metric">15M Görüntülenme</span>
+                                        <span class="metric">%92 Olumlu Duygu</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-client">EcoLife</span>
+                            <span class="project-category">Sürdürülebilirlik</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card" data-category="brand-strategy" data-project="3">
+                        <div class="project-thumbnail">
+                            <video autoplay muted loop playsinline>
+                                <source src="assets/videos/project3-preview.mp4" type="video/mp4">
+                            </video>
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h3>FinNext Rebrand</h3>
+                                    <p>Marka Dönüşümü</p>
+                                    <div class="project-metrics">
+                                        <span class="metric">+156% Marka Bilinirliği</span>
+                                        <span class="metric">3:1 LTV:CAC</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-client">FinNext</span>
+                            <span class="project-category">Fintech</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card" data-category="ai-campaign" data-project="4">
+                        <div class="project-thumbnail">
+                            <video autoplay muted loop playsinline>
+                                <source src="assets/videos/project4-preview.mp4" type="video/mp4">
+                            </video>
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h3>HealthTech AI Kampanya</h3>
+                                    <p>Kişiselleştirilmiş Reklam</p>
+                                    <div class="project-metrics">
+                                        <span class="metric">+421% ROI</span>
+                                        <span class="metric">%78 Azalan CPA</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-client">HealthTech</span>
+                            <span class="project-category">Sağlık</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card" data-category="video" data-project="5">
+                        <div class="project-thumbnail">
+                            <video autoplay muted loop playsinline>
+                                <source src="assets/videos/project5-preview.mp4" type="video/mp4">
+                            </video>
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h3>FashionForward Kampanya</h3>
+                                    <p>AI Generative Visuals</p>
+                                    <div class="project-metrics">
+                                        <span class="metric">8M Sosyal Etkileşim</span>
+                                        <span class="metric">%234 Satış Artışı</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-client">FashionForward</span>
+                            <span class="project-category">Moda</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card" data-category="brand-strategy" data-project="6">
+                        <div class="project-thumbnail">
+                            <video autoplay muted loop playsinline>
+                                <source src="assets/videos/project6-preview.mp4" type="video/mp4">
+                            </video>
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h3>GameStudio Lansmanı</h3>
+                                    <p>360° Marka Stratejisi</p>
+                                    <div class="project-metrics">
+                                        <span class="metric">1M İlk Hafta Kullanıcı</span>
+                                        <span class="metric">#1 App Store</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-client">GameStudio</span>
+                            <span class="project-category">Gaming</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="projects-stats">
+            <div class="container">
+                <h2 class="section-title">SAYILARLA BAŞARILARIMIZ</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="150">0</span>
+                        <span class="stat-suffix">+</span>
+                        <p class="stat-label">Tamamlanan Proje</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-suffix">B%</span>
+                        <p class="stat-label">Ortalama ROI Artışı</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="50">0</span>
+                        <span class="stat-suffix">M+</span>
+                        <p class="stat-label">Toplam İzlenme</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="25">0</span>
+                        <span class="stat-suffix">+</span>
+                        <p class="stat-label">Ödül ve Takdir</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="projects-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>SİZİN BAŞARI HİKAYENİZ HAZIR MI?</h2>
+                    <p>Markanızı bir sonraki seviyeye taşıyalım</p>
+                    <a href="iletisim.html" class="cta-button">
+                        <span>PROJE BAŞLAT</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div id="footer">
+            <div id="footer-content">
+                <div id="footer-socials">
+                    <a href="https://www.instagram.com/swordnest/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/905161622146" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+                <div id="footer-text">
+                    <p>© 2025 Sword Nest. Tüm Hakları Saklıdır.</p>
+                    <p>Sitede yer alan tüm görseller ve video prodüksiyonları Sword Nest'e aittir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-video">
+                    <iframe src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="modal-info">
+                    <h2 class="modal-title"></h2>
+                    <div class="modal-metrics"></div>
+                    <div class="modal-description"></div>
+                    <div class="modal-process"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="assets/scripts/navigation.js"></script>
+    <script src="assets/scripts/page-loader.js"></script>
+    <script src="assets/scripts/sword-animation.js"></script>
+    <script src="assets/scripts/projects.js"></script>
+</body>
+</html>
