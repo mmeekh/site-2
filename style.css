@@ -1,20 +1,13 @@
+/* ==========================================================================
+   1. Global Stiller ve Değişkenler
+   ========================================================================== */
+
 * {
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Montserrat', sans-serif;
-}
-
-html, body {
-    height: 100%;
-    width: 100%;
-    color: #F7FAFC; /* Ana metin rengi: Çok Açık Gri */
-}
-
-/* Root Variables */
 :root {
     --color-bg-primary: #1A202C;
     --color-bg-secondary: #0F0F0F;
@@ -28,10 +21,21 @@ html, body {
     --transition-medium: 0.6s ease;
 }
 
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+}
+
+/* ==========================================================================
+   2. Ana Konteyner ve Sayfa Yapısı
+   ========================================================================== */
+
 #main {
     position: relative;
     overflow: hidden;
-    background-color: var(--color-bg-primary);
 }
 
 #page, #page1, #page2, #page3 {
@@ -41,8 +45,7 @@ html, body {
     background-color: var(--color-bg-primary);
 }
 
-/* Main Canvas (Sword Animation) */
-#main-canvas {
+canvas {
     position: relative;
     z-index: 90;
     max-width: 100vw;
@@ -50,55 +53,10 @@ html, body {
     pointer-events: none;
 }
 
-/* Navigation Canvas */
-#nav-canvas {
-    width: 60px;
-    height: 60px;
-    position: relative;
-    z-index: 100;
-}
+/* ==========================================================================
+   3. Navigasyon
+   ========================================================================== */
 
-#loop {
-    display: flex;
-    position: absolute;
-    top: 30%;
-    height: 25%;
-    width: 100%;
-    font-size: 100px;
-    white-space: nowrap;
-    font-family: gilroy;
-    color: var(--color-text-primary);
-}
-
-#loop > h1 {
-    font-weight: 400;
-    animation-name: anim;
-    animation-duration: 15s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-#loop > h1 b {
-    color: var(--color-accent-green);
-}
-
-#loop > h1 i {
-    color: var(--color-text-secondary);
-    font-style: italic;
-}
-
-#loop > h1 > span {
-    -webkit-text-stroke: 1.2px var(--color-text-secondary);
-    color: transparent;
-    font-weight: 500;
-}
-
-@keyframes anim {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
-}
-
-/* Enhanced Navigation Styles */
 #nav {
     display: flex;
     align-items: center;
@@ -107,8 +65,7 @@ html, body {
     width: 100%;
     position: fixed;
     z-index: 1000;
-    padding: 0px 30px;
-    color: var(--color-text-primary);
+    padding: 0 30px;
     background: rgba(26, 32, 44, 0.95);
     backdrop-filter: blur(10px);
     transition: all var(--transition-fast);
@@ -118,6 +75,16 @@ html, body {
     height: 70px;
     background: rgba(26, 32, 44, 0.98);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-brand h3 {
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0;
+}
+
+.nav-brand h3 b {
+    color: var(--color-accent-green);
 }
 
 #nav-line {
@@ -142,61 +109,85 @@ html, body {
     stroke-linecap: round;
 }
 
-/* Page Content Text Styles */
-#page > h3,
-#page > h4,
-#page1 > #right-text > h3,
-#page1 > #left-text > h3,
-#page2 > #text1 > h3,
-#page2 > #text2 > p,
-#page3 > #text3 > h3 {
+/* ==========================================================================
+   4. Sayfa İçerik Elemanları (Masaüstü)
+   ========================================================================== */
+
+/* Dönen Yazı Animasyonu */
+#loop {
+    display: flex;
+    position: absolute;
+    top: 30%;
+    height: 25%;
+    width: 100%;
+    font-size: 100px;
+    white-space: nowrap;
+    font-family: gilroy, sans-serif;
+    color: var(--color-text-primary);
+}
+
+#loop > h1 {
+    font-weight: 400;
+    animation: anim 15s linear infinite;
+}
+
+#loop > h1 b { color: var(--color-accent-green); }
+#loop > h1 i { color: var(--color-text-secondary); font-style: italic; }
+#loop > h1 > span {
+    -webkit-text-stroke: 1.2px var(--color-text-secondary);
+    color: transparent;
+    font-weight: 500;
+}
+
+@keyframes anim {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Genel Metin Stilleri */
+#page > h3, #page > h4, #page1 > #right-text > h3, #page1 > #left-text > h3,
+#page2 > #text1 > h3, #page2 > #text2 > p, #page3 > #text3 > h3 {
     color: var(--color-text-secondary); 
 }
 
-#page > h3 {
+/* Sayfalardaki Metin Bloklarının Pozisyonları */
+#page > h3 { position: absolute; top: 55%; left: 5%; font-weight: 400; line-height: 1.5; }
+#page > h4 { position: absolute; top: 70%; left: 5%; font-weight: 500; }
+
+#page1 > #right-text { position: absolute; top: 30%; left: 10%; } /* Kullanılmıyor gibi görünüyor */
+#page2 > #text1 {
     position: absolute;
-    top: 55%; left: 5%; font-weight: 400;
-}
+    top: 50%;
+    left: 10%; /* Kenara makul bir boşluk */
+    width: 40%; /* Genişlik tanımı */
+    transform: translateY(-50%); /* Dikeyde ortalama */
+    text-align: left; /* Metni sola hizala */
+}#page2 > #text2 { position: absolute; top: 26%; left: 75%; transform: translateX(-50%); width: 450px; text-align: left; }
+#page3 > #text3 { position: absolute; top: 40%; right: 10%; text-align: end; }
 
-#page > h4 {
+/* SORUNU ÇÖZEN DÜZENLENMİŞ BÖLÜM (Masaüstü) */
+#page1 > #left-text {
     position: absolute;
-    top: 70%; left: 5%; font-weight: 500;
+    top: 50%;
+    right: 10%; /* Kenara daha makul bir boşluk */
+    width: 40%; /* Genişlik tanımı */
+    transform: translateY(-50%); /* Sadece dikeyde ortalama */
+    text-align: right; /* Metni sağa hizala */
 }
 
-/* Fluid Font Sizes */
-#page1 > #left-text > h1 {
-    color: var(--color-text-primary);
-    font-size: clamp(2rem, 4vw + 0.5rem, 3.125rem);
-    line-height: 1.5;
-}
-
-#page2 > #text1 > h1 {
-    color: var(--color-text-primary);
-    font-size: clamp(2.25rem, 5vw + 0.5rem, 3.75rem);
-    line-height: 1.5;
-}
-
+/* Metin Blokları Font Boyutları */
+#page1 > #left-text > h1,
+#page2 > #text1 > h1,
 #page3 > #text3 > h1 {
     color: var(--color-text-primary);
-    font-size: clamp(2.5rem, 6vw + 0.5rem, 4.375rem);
     line-height: 1.5;
 }
+#page1 > #left-text > h1 { font-size: clamp(2rem, 4vw + 0.5rem, 3.125rem); }
+#page2 > #text1 > h1 { font-size: clamp(2.25rem, 5vw + 0.5rem, 3.75rem); }
+#page3 > #text3 > h1 { font-size: clamp(2.5rem, 6vw + 0.5rem, 4.375rem); }
+#page2 > #text2 > p { font-size: 14px; line-height: 1.6; }
 
-#page1 > #right-text,
-#page1 > #left-text,
-#page2 > #text1,
-#page2 > #text2,
-#page3 > #text3 {
-    position: absolute;
-}
-
-#page1 > #right-text { top: 30%; left: 10%; }
-#page1 > #left-text { top: 50%; right: 10%; text-align: end; }
-#page2 > #text1 { top: 30%; left: 10%; }
-#page2 > #text2 { top: 55%; right: 10%; text-align: end; }
-#page3 > #text3 { top: 40%; right: 10%; text-align: end; }
-
-/* Video Container Styles */
+/* Video Konteynerları */
 .video-glow {
     position: absolute;
     overflow: hidden; 
@@ -213,85 +204,18 @@ html, body {
     position: absolute; 
     top: 0; 
     left: 0; 
-    pointer-events: auto;
 }
 
-#video-container { 
-    top: 68%; 
-    left: 77%; 
-    transform: translate(-50%, -50%); 
-    width: 25vw; 
-    height: calc(25vw * 9 / 16); 
-}
+#video-container { top: 68%; left: 77%; transform: translate(-50%, -50%); width: 30vw; height: calc(30vw * 9 / 16); }
+#video-container-page1 { top: 50%; left: 25%; transform: translate(-50%, -50%); width: 30vw; height: calc(30vw * 9 / 16); }
+#video-container-page2 { top: 48%; left: 75%; transform: translateX(-50%); width: 30vw; height: calc(30vw * 9 / 16); }
+#video-container-page3 { top: 40%; left: 25%; transform: translate(-50%, -50%); width: 30vw; height: calc(30vw * 9 / 16); }
 
-#page > h3 { 
-    position: absolute; 
-    top: 55%; 
-    left: 5%; 
-    font-family: Montserrat; 
-    font-weight: 400; 
-    line-height: 1.5; 
-}
 
-#page > h4 { 
-    position: absolute; 
-    top: 70%; 
-    left: 5%; 
-    font-family: Montserrat; 
-    font-weight: 500; 
-}
+/* ==========================================================================
+   5. Footer
+   ========================================================================== */
 
-#video-container-page1 { 
-    top: 50%; 
-    left: 25%; 
-    transform: translate(-50%, -50%); 
-    width: 30vw; 
-    height: calc(30vw * 9 / 16); 
-}
-
-#page1 > #left-text { 
-    right: 25%; 
-    top: 50%; 
-    transform: translate(50%, -50%); 
-}
-
-#page2 > #text1 {
-    top: 50%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-}
-
-#page2 > #text2 { 
-    position: absolute; 
-    top: 26%; 
-    left: 75%; 
-    transform: translateX(-50%); 
-    width: 450px; 
-    text-align: left; 
-}
-
-#page2 > #text2 > p {
-    line-height: 1.6;
-    font-size: 14px;
-}
-
-#video-container-page2 { 
-    top: 48%;
-    left: 75%; 
-    transform: translateX(-50%); 
-    width: 30vw; 
-    height: calc(30vw * 9 / 16); 
-}
-
-#video-container-page3 { 
-    top: 40%; 
-    left: 25%; 
-    transform: translate(-50%, -50%); 
-    width: 30vw; 
-    height: calc(30vw * 9 / 16); 
-}
-
-/* Footer Styles */
 #footer { 
     position: relative; 
     width: 100%; 
@@ -332,7 +256,10 @@ html, body {
     line-height: 1.6; 
 }
 
-/* Page Transition Overlay */
+/* ==========================================================================
+   6. Sayfa Geçiş Efektleri
+   ========================================================================== */
+
 .page-transition {
     position: fixed;
     top: 0;
@@ -355,46 +282,31 @@ html, body {
     left: -100%;
     width: 200%;
     height: 2px;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        var(--color-accent-blue) 45%, 
-        #fff 50%, 
-        var(--color-accent-blue) 55%, 
-        transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, var(--color-accent-blue) 45%, #fff 50%, var(--color-accent-blue) 55%, transparent 100%);
     transform: translateY(-50%) rotate(-15deg);
     box-shadow: 0 0 20px var(--color-accent-blue);
 }
 
-/* Loader Hidden State */
-.hidden {
-    display: none;
-}
+.hidden { display: none; }
+.loaded { opacity: 1; transition: opacity 0.6s ease; }
 
-/* Main Content Loaded State */
-.loaded {
-    opacity: 1;
-    transition: opacity 0.6s ease;
-}
 
-/* Media Queries */
+/* ==========================================================================
+   7. Media Sorguları (Responsive Tasarım)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   7.1. Mobil Görünüm (768px ve altı)
+   -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
-    #nav {
-        height: 70px;
-        padding: 0 20px;
-    }
-    
-    #nav-line {
-        display: none; 
-    }
+    /* Mobil Navigasyon */
+    #nav { height: 70px; padding: 0 20px; }
+    #nav-line { display: none; }
+    #nav > canvas { height: 50px; width: 50px; }
 
-    #nav > canvas {
-        height: 50px;
-        width: 50px;
-    }
-    
+    /* Mobil Sayfa Yapısı */
     #page, #page1, #page2, #page3 {
-        padding-top: 85px; 
-        padding-bottom: 51px; 
+        padding: 85px 0 51px; 
         height: auto; 
         min-height: 100vh;
         display: flex;
@@ -402,24 +314,20 @@ html, body {
         justify-content: center;
     }
 
+    /* Mobil Dönen Yazı */
     #loop {
         position: relative; 
-        top: -10px; 
+        top: 0; 
         height: auto;
         margin-bottom: 40px;
-    }
-
-    #loop > h1 {
-        font-size: 20vw; 
+        font-size: 20vw;
         line-height: 1.2;
     }
+
+    /* SORUNU ÇÖZEN DÜZENLENMİŞ BÖLÜM (Mobil) */
     
-    #page > h3, 
-    #page > h4,
-    #page1 > #left-text,
-    #page2 > #text1,
-    #page2 > #text2,
-    #page3 > #text3 {
+    /* Mobil için genel metin bloğu stili (ortalanmış) */
+    #page > h3, #page > h4, #page2 > #text1, #page2 > #text2, #page3 > #text3 {
         position: relative !important;
         top: auto !important;
         left: auto !important;
@@ -431,61 +339,50 @@ html, body {
         padding: 0;
     }
     
-    #page1 > #left-text > h1,
-    #page2 > #text1 > h1,
-    #page3 > #text3 > h1 {
+    /* Mobil için #left-text'e özel stil (sağa dayalı) */
+    #page1 > #left-text {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 90%;
+        text-align: right; /* ÖNEMLİ: Mobil için sağa hizalama */
+        margin: 50px auto 15px;
+        transform: none !important;
+        padding: 0;
+    }
+
+    /* Mobil Metin Font Boyutları ve Stilleri */
+    #page1 > #left-text > h1, #page2 > #text1 > h1, #page3 > #text3 > h1 {
         line-height: 1.3;
         margin-bottom: 15px;
     }
-
-    #page > h3 {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
-    #page > h4 {
-        font-size: 14px;
-        color: var(--color-accent-green);
-    }
+    #page > h3 { font-size: 16px; line-height: 1.6; }
+    #page > h4 { font-size: 14px; color: var(--color-accent-green); }
+    #page2 > #text2 > p { font-size: 15px; line-height: 1.7; }
     
-    #page2 > #text2 > p {
-        font-size: 15px;
-        line-height: 1.7;
-    }
-    
+    /* Mobil Video Konteynerları */
     .video-glow { 
         position: relative; 
-        width: 95vw;
-        height: calc(95vw * 9 / 16);
+        width: 90vw;
+        height: calc(90vw * 9 / 16);
         top: auto;
         left: auto;
         transform: none;
-        margin: 60px auto 40px auto; 
+        margin: 40px auto; 
         border-radius: 10px;
-        z-index: 95;
     }
 
-    #page1 > #left-text {
-        margin-top: 50px; 
-    }
-
-    #video-container,
-    #video-container-page1,
-    #video-container-page2,
-    #video-container-page3 {
+    #video-container, #video-container-page1, #video-container-page2, #video-container-page3 {
         position: relative !important;
         top: auto !important;
         left: auto !important;
         transform: none !important;
-        width: 80vw !important;
-        height: calc(80vw * 9 / 16) !important;
+        width: 100% !important;
+        height: 100% !important;
     }
 
-    #page3 .video-glow {
-        margin-top: 20px; 
-        margin-bottom: 50px;
-    }
-
+    /* Mobil Footer */
     #footer-content { 
         flex-direction: column; 
         gap: 30px; 
@@ -497,7 +394,9 @@ html, body {
     }
 }
 
-/* Tablet Optimization */
+/* --------------------------------------------------------------------------
+   7.2. Tablet Optimizasyonu (769px - 1024px)
+   -------------------------------------------------------------------------- */
 @media (min-width: 769px) and (max-width: 1024px) {
     #nav {
         padding: 0 25px;
@@ -506,5 +405,10 @@ html, body {
     .video-glow {
         width: 40vw;
         height: calc(40vw * 9 / 16);
+    }
+
+    #page1 > #left-text {
+        width: 45%;
+        right: 3%;
     }
 }

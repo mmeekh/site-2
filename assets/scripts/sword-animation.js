@@ -3,8 +3,8 @@ class SwordAnimation {
     constructor(options = {}) {
         this.canvas = options.canvas;
         this.context = this.canvas ? this.canvas.getContext('2d') : null;
-        this.frameCount = options.frameCount || 40;
-        this.basePath = options.basePath || './';
+        this.frameCount = options.frameCount || 40; // Görsellerine göre bu değeri ayarla (örn: 40 kare için)
+        this.basePath = options.basePath || 'images/sword-sequence/';
         this.scrollBehavior = options.scrollBehavior || 'scroll'; // scroll, rotate, follow, fixed
         this.scrollTrigger = options.scrollTrigger || null;
         this.autoplay = options.autoplay || false;
@@ -61,10 +61,18 @@ class SwordAnimation {
         let loadedCount = 0;
         
         for (let i = 0; i < this.frameCount; i++) {
-            const frameIndex = 1 + (i * 3);
+            const frameIndex = 1 + (i * 3); // 0001, 0004, 0007, 0010... şeklinde 3'er artarak
             const img = new Image();
             
             img.onload = () => {
+                loadedCount++;
+                if (loadedCount === this.frameCount && callback) {
+                    callback();
+                }
+            };
+            
+            img.onerror = () => {
+                console.error(`Görsel yüklenemedi: ${this.files(frameIndex)}`);
                 loadedCount++;
                 if (loadedCount === this.frameCount && callback) {
                     callback();
@@ -158,7 +166,7 @@ class SwordAnimation {
         if (!this.isLoaded) return;
         
         const currentImage = this.images[Math.floor(this.imageSeq.frame - 1)];
-        if (currentImage) {
+        if (currentImage && currentImage.complete) {
             this.scaleImage(currentImage, this.context);
         }
     }
