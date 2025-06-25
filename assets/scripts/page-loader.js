@@ -122,6 +122,55 @@ class PageLoader {
         });
     }
     
+    loadPageCSS(url) {
+        // Remove existing page-specific CSS
+        const existingPageCSS = document.querySelectorAll('link[data-page-css]');
+        existingPageCSS.forEach(link => link.remove());
+        
+        // Determine which CSS file to load based on URL
+        let cssFile = '';
+        const currentPage = url.split('/').pop() || 'index.html';
+        
+        switch (currentPage) {
+            case 'hakkimizda.html':
+                cssFile = './assets/styles/pages/hakkimizda.css';
+                break;
+            case 'projeler.html':
+                cssFile = './assets/styles/pages/projeler.css';
+                break;
+            case 'iletisim.html':
+                cssFile = './assets/styles/pages/iletisim.css';
+                break;
+            default:
+                // No additional CSS needed for homepage
+                return Promise.resolve();
+        }
+        
+        // Load the CSS file and return a promise
+        return new Promise((resolve, reject) => {
+            if (cssFile) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = cssFile;
+                link.setAttribute('data-page-css', 'true');
+                
+                link.onload = () => {
+                    console.log(`CSS loaded: ${cssFile}`);
+                    resolve();
+                };
+                
+                link.onerror = () => {
+                    console.error(`Failed to load CSS: ${cssFile}`);
+                    resolve(); // Still resolve to not block the process
+                };
+                
+                document.head.appendChild(link);
+            } else {
+                resolve();
+            }
+        });
+    }
+    
     updateMetaTags(newDoc) {
         // Update meta description
         const metaDesc = newDoc.querySelector('meta[name="description"]');
@@ -150,28 +199,44 @@ class PageLoader {
         // Kill all ScrollTriggers
         ScrollTrigger.getAll().forEach(st => st.kill());
         
-        // Reinitialize based on current page
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        
-        switch (currentPage) {
-            case 'index.html':
-                this.initHomePage();
-                break;
-            case 'hakkimizda.html':
-                this.initAboutPage();
-                break;
-            case 'projeler.html':
-                this.initProjectsPage();
-                break;
-            case 'iletisim.html':
-                this.initContactPage();
-                break;
-        }
-        
-        // Reinitialize locomotive scroll
-        if (typeof locomotive === 'function') {
-            window.locomotiveScroll = locomotive();
-        }
+        // Wait for CSS to be fully loaded
+        setTimeout(() => {
+            // Reinitialize based on current page
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            
+            switch (currentPage) {
+                case 'index.html':
+                    this.initHomePage();
+                    break;
+                case 'hakkimizda.html':
+                    this.initAboutPage();
+                    break;
+                case 'projeler.html':
+                    this.initProjectsPage();
+                    break;
+                case 'iletisim.html':
+                    this.initContactPage();
+                    break;
+            }
+            
+            // Reinitialize locomotive scroll with a longer delay
+            setTimeout(() => {
+                // Use the global locomotive function from script.js
+                if (typeof locomotive === 'function') {
+                    try {
+                        window.locomotiveScroll = locomotive();
+                        console.log('Locomotive scroll reinitialized');
+                    } catch (e) {
+                        console.error('Locomotive scroll initialization error:', e);
+                    }
+                    
+                    // Refresh ScrollTrigger after locomotive is ready
+                    setTimeout(() => {
+                        ScrollTrigger.refresh();
+                    }, 200);
+                }
+            }, 300);
+        }, 200);
     }
     
     initHomePage() {
@@ -202,11 +267,59 @@ class PageLoader {
     initProjectsPage() {
         // Projects page specific initializations
         console.log('Projects page initialized');
+        
+        // Initialize projects page if function exists
+        if (typeof window.initProjectsPage === 'function') {
+            window.initProjectsPage();
+        } else {
+            // Fallback initialization
+            setTimeout(() => {
+                if (typeof initFilterSystem === 'function') {
+                    initFilterSystem();
+                }
+                if (typeof initProjectCards === 'function') {
+                    initProjectCards();
+                }
+                if (typeof initProjectModal === 'function') {
+                    initProjectModal();
+                }
+                if (typeof initStatsCounter === 'function') {
+                    initStatsCounter();
+                }
+                if (typeof initSwordDecoration === 'function') {
+                    initSwordDecoration();
+                }
+            }, 200);
+        }
     }
     
     initContactPage() {
         // Contact page specific initializations
         console.log('Contact page initialized');
+        
+        // Initialize contact page if function exists
+        if (typeof window.initContactPage === 'function') {
+            window.initContactPage();
+        } else {
+            // Fallback initialization
+            setTimeout(() => {
+                if (typeof initContactSword === 'function') {
+                    initContactSword();
+                }
+                if (typeof initContactForm === 'function') {
+                    initContactForm();
+                }
+                if (typeof initFAQAccordion === 'function') {
+                    initFAQAccordion();
+                }
+                if (typeof initMap === 'function') {
+                    initMap();
+                }
+                if (typeof initContactParticles === 'function') {
+                    initContactParticles();
+                }
+            }, 200);
+        }
     }
 }
 

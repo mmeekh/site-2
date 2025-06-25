@@ -2,7 +2,7 @@
 class Navigation {
     constructor() {
         this.nav = document.getElementById('nav');
-        this.mobileToggle = document.querySelector('.nav-mobile-toggle');
+        this.mobileToggle = document.querySelector('. obile-toggle');
         this.mobileMenu = document.querySelector('.mobile-menu');
         this.navLinks = document.querySelectorAll('.nav-link');
         this.mobileNavLinks = document.querySelectorAll('.mobile-nav-link');

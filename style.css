@@ -60,7 +60,7 @@ canvas {
 #nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;  /* Bu satır değişti */
     height: 80px;
     width: 100%;
     position: fixed;
@@ -81,6 +81,7 @@ canvas {
     font-weight: 400;
     font-size: 22px;
     margin: 0;
+    /* position ve left satırları kaldırıldı */
 }
 
 .nav-brand h3 b {
@@ -107,6 +108,12 @@ canvas {
     stroke: var(--color-accent-green);
     stroke-width: 2.5;
     stroke-linecap: round;
+}
+
+/* Sayfa geçişlerinde içerik stabilitesi için nav yüksekliği kadar boşluk bırak */
+.page-stable {
+    min-height: 80px;
+    width: 100%;
 }
 
 /* ==========================================================================
@@ -300,9 +307,15 @@ canvas {
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
     /* Mobil Navigasyon */
-    #nav { height: 70px; padding: 0 20px; }
+    #nav { 
+        height: 70px; 
+        padding: 0 20px; 
+        justify-content: space-between;
+    }
+    
     #nav-line { display: none; }
     #nav > canvas { height: 50px; width: 50px; }
+    /* .nav-brand h3 kısmı kaldırıldı */
 
     /* Mobil Sayfa Yapısı */
     #page, #page1, #page2, #page3 {

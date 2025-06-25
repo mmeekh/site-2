@@ -51,6 +51,9 @@ function locomotive() {
     return locoScroll;
 }
 
+// Make locomotive function globally available
+window.locomotive = locomotive;
+
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize locomotive scroll

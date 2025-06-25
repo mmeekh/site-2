@@ -1,23 +1,25 @@
 // Contact Page Scripts
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Locomotive Scroll
-    const locoScroll = locomotive();
-    
-    // Initialize contact sword animation
-    initContactSword();
-    
-    // Initialize form handling
-    initContactForm();
-    
-    // Initialize FAQ accordion
-    initFAQAccordion();
-    
-    // Initialize map (if using real map API)
-    initMap();
-    
-    // Initialize particles
-    initContactParticles();
+    initContactPage();
 });
+
+// Global function for page transitions
+window.initContactPage = function() {
+    // Wait for DOM to be ready
+    setTimeout(() => {
+        // Initialize Locomotive Scroll
+        if (typeof window.locomotive === 'function') {
+            const locoScroll = window.locomotive();
+        }
+        
+        // Initialize contact page components
+        initContactSword();
+        initContactForm();
+        initFAQAccordion();
+        initMap();
+        initContactParticles();
+    }, 100);
+};
 
 // Contact Sword Animation (follows cursor)
 function initContactSword() {

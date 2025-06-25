@@ -17,8 +17,11 @@
 /* Desktop Navigation Menu */
 .nav-menu {
     display: flex;
-    gap: 40px;
+    gap: 60px;
     align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-link {

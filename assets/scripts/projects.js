@@ -1,23 +1,25 @@
 // Projects Page Scripts
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Locomotive Scroll
-    const locoScroll = locomotive();
-    
-    // Initialize filter system
-    initFilterSystem();
-    
-    // Initialize project cards animations
-    initProjectCards();
-    
-    // Initialize modal system
-    initProjectModal();
-    
-    // Initialize stats counter
-    initStatsCounter();
-    
-    // Initialize sword decoration
-    initSwordDecoration();
+    initProjectsPage();
 });
+
+// Global function for page transitions
+window.initProjectsPage = function() {
+    // Wait for DOM to be ready
+    setTimeout(() => {
+        // Initialize Locomotive Scroll
+        if (typeof window.locomotive === 'function') {
+            const locoScroll = window.locomotive();
+        }
+        
+        // Initialize projects page components
+        initFilterSystem();
+        initProjectCards();
+        initProjectModal();
+        initStatsCounter();
+        initSwordDecoration();
+    }, 100);
+};
 
 // Project data (in real app, this would come from a database)
 const projectsData = {
