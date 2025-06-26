@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollTrigger: {
                 trigger: '#page',
                 start: 'top top',
-                end: '600% top',
+                end: '400% top',
                 scroller: '#main'
             }
         });

@@ -178,7 +178,7 @@ class SwordAnimation {
         let ratio = Math.max(hRatio, vRatio);
         
         if (window.innerWidth > 768 && this.size === 'full') {
-            ratio *= 0.95;
+            ratio *= 0.90; // %5 daha küçük (0.95'ten 0.90'a)
         }
         
         const centerShift_x = (canvas.width - img.width * ratio) / 2;
